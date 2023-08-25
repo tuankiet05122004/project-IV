@@ -1,0 +1,33 @@
+@use "../base/variable";
+@mixin respond($beakPoint) {
+    @if $breakPoint == "small" {
+        @media (min-width: $small) {
+            @content;
+        }
+    }
+    @if $breakPoint == "medium" {
+        @media (min-width: $medium) {
+            @content;
+        }
+    }
+    @if $breakPoint == "large" {
+        @media (min-width: $large) {
+            @content;
+        }
+    }
+}
+
+@mixin widthHeight($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flex-center($items, $justify: null) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $items;
+}
+
+@mixin transition($durasion) {
+    transition: all $durasion ease;
+}

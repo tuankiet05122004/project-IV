@@ -1,0 +1,65 @@
+@use "../base/common";
+@use "../base/variable";
+@use "../base/mixin";
+.header {
+    margin-top: 20px;
+    max-width: 1330px;
+    @extend .margin-auto;
+}
+.header__inner {
+    @include mixin.flex-center(center, space-between);
+}
+.email {
+    @include mixin.flex-center(center);
+    gap: 10px;
+}
+.email-icon {
+    @include mixin.widthHeight(46px);
+    @include mixin.flex-center(center, center);
+    border-radius: 50%;
+    border: 1px solid variable.$primary-opacity;
+}
+.email-address {
+    color: variable.$heading-color;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-decoration: underline;
+    @include mixin.transition(0.2s);
+}
+.email-address:hover {
+    color: variable.$primary-color;
+}
+.avatar {
+    @include mixin.widthHeight(100px);
+}
+.navbar {
+    @include mixin.flex-center(center);
+    gap: 43px;
+}
+.navbar-item {
+    color: variable.$gray-color;
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+}
+.navbar-item:after {
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 2px;
+    background-color: variable.$primary-color;
+    @include mixin.transition(0.3s);
+}
+
+.navbar-item:hover,
+.navbar-item:hover:after {
+    width: 100%;
+    color: variable.$primary-color;
+}
+.navbar-item--link {
+    color: inherit;
+}
