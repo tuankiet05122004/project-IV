@@ -1,3 +1,5 @@
+@use "./variable";
+@use "mixin";
 body {
     font-family: "DM Sans", sans-serif;
 }
@@ -10,4 +12,37 @@ a {
 .margin-auto {
     margin-left: auto;
     margin-right: auto;
+}
+.section__heading {
+    font-weight: 500;
+    color: variable.$heading-color;
+}
+.section__desc {
+    font-size: 18px;
+    font-weight: 400;
+    color: variable.$gray-color;
+    line-height: 1.67;
+}
+.btn {
+    min-width: 170px;
+    height: 62px;
+    font-weight: 700;
+    font-size: 18px;
+    background-color: variable.$primary-color;
+    color: variable.$white-fd;
+    @include mixin.flex-center(center, center);
+}
+.btn:hover {
+    opacity: 0.7;
+    @include mixin.transition(0.3s);
+}
+.link {
+    color: variable.$heading-color;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration-line: underline;
+}
+.link:hover {
+    color: variable.$primary-color;
+    @include mixin.transition(0.2s);
 }

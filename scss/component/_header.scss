@@ -2,11 +2,12 @@
 @use "../base/variable";
 @use "../base/mixin";
 .header {
-    margin-top: 20px;
-    max-width: 1330px;
-    @extend .margin-auto;
+    background-color: variable.$bg-white;
 }
 .header__inner {
+    padding-top: 20px;
+    max-width: 1330px;
+    @extend .margin-auto;
     @include mixin.flex-center(center, space-between);
 }
 .email {

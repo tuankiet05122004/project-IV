@@ -31,3 +31,9 @@
 @mixin transition($durasion) {
     transition: all $durasion ease;
 }
+
+@mixin make-heading($size, $line-height, $spacing) {
+    font-size: $size;
+    line-height: $line-height;
+    letter-spacing: $spacing;
+}

@@ -1,0 +1,44 @@
+@use "../base/variable";
+@use "../base/mixin";
+@use "../base/common";
+.hero {
+    padding-top: 44px;
+    background-color: variable.$bg-white;
+
+    .hero__content {
+        align-self: center;
+
+        .hero__heading {
+            @include mixin.make-heading(80px, 0.95, -3.2px);
+        }
+        .hero__desc {
+            margin-top: 20px;
+        }
+
+        .hero__content-work {
+            margin-top: 50px;
+            gap: 30px;
+            @include mixin.flex-center(center);
+        }
+
+        .hero__info {
+            margin-top: 104px;
+            gap: 15px;
+            @include mixin.flex-center(center);
+        }
+
+        .hero__info-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid variable.$primary-opacity;
+            @include mixin.flex-center(center, center);
+            @include mixin.transition(0.2s);
+        }
+
+        .hero__info-icon:hover {
+            background-color: variable.$primary-opacity;
+            cursor: pointer;
+        }
+    }
+}
