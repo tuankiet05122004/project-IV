@@ -1,5 +1,9 @@
 @use "base/reset";
 @use "grid/grid";
 @use "base/common";
+// component
 @use "component/header";
 @use "component/hero";
+@use "component/clients";
+@use "component/specialities";
+@use "component/project";

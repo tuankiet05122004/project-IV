@@ -1,0 +1,73 @@
+@use "../base/variable";
+@use "../base/mixin";
+@use "../base/common";
+
+.project {
+    margin-top: 140px;
+    background-color: variable.$primary-color;
+    padding: 86px 0;
+
+    .project__top {
+        align-items: center;
+    }
+
+    .project__heading {
+        color: white;
+        font-size: 56px;
+        line-height: 1.18;
+        letter-spacing: -2.24px;
+    }
+
+    .project__desc {
+        color: #fff;
+        max-width: 370px;
+    }
+
+    .project__list {
+        margin-top: 70px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+    }
+
+    .project__item {
+        background-color: variable.$bg-white;
+        padding: 23px 23px 23px 34px;
+        @include mixin.flex-center(center);
+    }
+
+    .project__item-content--title {
+        font-size: 32px;
+        line-height: 1.25;
+        letter-spacing: -1.28px;
+    }
+
+    .prject__item-content--desc {
+        font-size: 16px;
+        margin-top: 10px;
+        line-height: 1.43;
+    }
+
+    .project__item-content--link {
+        color: variable.$heading-color;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.67; /* 166.667% */
+        text-decoration-line: underline;
+        display: inline-block;
+        margin-top: 20px;
+        @include mixin.transition(0.2s);
+    }
+    .project__item-content--link:hover {
+        color: variable.$primary-color;
+    }
+
+    .project__btn {
+        background-color: white;
+        color: variable.$primary-color;
+        max-width: 170px;
+        margin: 80px auto 0 auto;
+    }
+}

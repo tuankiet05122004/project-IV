@@ -1,0 +1,71 @@
+@use "../base/variable";
+@use "../base/mixin";
+@use "../base/common";
+
+.clients {
+    margin-top: 100px;
+
+    .clients-heading {
+        font-size: 42px;
+        line-height: 1.2;
+        letter-spacing: -1.68px;
+        padding-left: 100px;
+        position: relative;
+    }
+
+    .clients-heading:after {
+        position: absolute;
+        left: 0;
+        top: 25%;
+        display: inline-block;
+        content: "";
+        @include mixin.widthHeight(86px, 2px);
+        background-color: variable.$primary-color;
+    }
+
+    .clients__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 36px;
+
+        .clients__item {
+            @include mixin.flex-center(center);
+            gap: 13px;
+        }
+
+        .clients__item-logo {
+            @include mixin.widthHeight(36px);
+            border-radius: 50%;
+            @include mixin.flex-center(center, center);
+        }
+
+        .clients__item:nth-child(2) .clients__item-logo {
+            background-color: variable.$bg-white;
+        }
+
+        .clients__item:nth-child(3) .clients__item-logo {
+            background-color: #fee101;
+        }
+
+        .clients__item:nth-child(4) .clients__item-logo {
+            background-color: #ff0000;
+        }
+
+        .clients__item:nth-child(5) .clients__item-logo {
+            background-color: #14a800;
+        }
+        .clients__item:nth-child(7) .clients__item-logo {
+            background-color: #7f54b2;
+        }
+        .clients__item:nth-child(8) .clients__item-logo {
+            background-color: #23bfc8;
+        }
+        .clients__item-name {
+            color: variable.$heading-color;
+            font-weight: 500;
+            font-size: 18px;
+        }
+    }
+}
